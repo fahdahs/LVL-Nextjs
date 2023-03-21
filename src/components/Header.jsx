@@ -34,7 +34,7 @@ export default function HeroSection() {
             {/* Hero card */}
             <div className="relative">
               <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gray-100 dark:bg-primary-dark" />
-              <div className="mx-auto max-w-full sm:px-6 lg:px-8">
+              <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
                 <div className="relative flex flex-col items-center justify-center shadow-xl md:h-[600px] h-screen dark:shadow-[#0a0c0f] sm:overflow-hidden sm:rounded-2xl">
                   <div className="absolute inset-0">
                     <Image
@@ -115,6 +115,49 @@ export default function HeroSection() {
                         </Tooltip>
                       </div>
                     </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/** Logos */}
+            {/* Logo cloud */}
+            <div className="bg-gray-100 dark:bg-primary-dark pb-6">
+              <div className="mx-auto max-w-7xl pb-6 pt-10 px-4 sm:px-6 lg:px-8">
+                <div className="mt-6 grid grid-cols-2 gap-8 md:grid-cols-6 lg:grid-cols-5">
+                  <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
+                    <img
+                      className="h-12"
+                      src="https://tailwindui.com/img/logos/tuple-logo-gray-400.svg"
+                      alt="Tuple"
+                    />
+                  </div>
+                  <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
+                    <img
+                      className="h-12"
+                      src="https://tailwindui.com/img/logos/mirage-logo-gray-400.svg"
+                      alt="Mirage"
+                    />
+                  </div>
+                  <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
+                    <img
+                      className="h-12"
+                      src="https://tailwindui.com/img/logos/statickit-logo-gray-400.svg"
+                      alt="StaticKit"
+                    />
+                  </div>
+                  <div className="col-span-1 flex justify-center md:col-span-2 md:col-start-2 lg:col-span-1">
+                    <img
+                      className="h-12"
+                      src="https://tailwindui.com/img/logos/transistor-logo-gray-400.svg"
+                      alt="Transistor"
+                    />
+                  </div>
+                  <div className="col-span-2 flex justify-center md:col-span-2 md:col-start-4 lg:col-span-1">
+                    <img
+                      className="h-12"
+                      src="https://tailwindui.com/img/logos/workcation-logo-gray-400.svg"
+                      alt="Workcation"
+                    />
                   </div>
                 </div>
               </div>

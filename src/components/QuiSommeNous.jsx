@@ -23,7 +23,7 @@ export default function QuiSommeNous() {
               location de voiture.
             </Typography>
             <Typography
-              variant="lead"
+              variant="paragraph"
               className="mt-4 text-gray-500 dark:text-gray-300"
             >
               Quelque soit la voiture souhaité, Location de voiture laayoune
