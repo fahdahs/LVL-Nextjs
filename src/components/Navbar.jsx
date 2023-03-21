@@ -10,32 +10,26 @@ const navLinks = [
   {
     id: "",
     name: "Accueil",
-    href: "",
   },
   {
     id: "qui_nous_sommes",
     name: "Qui nous sommes",
-    href: "",
   },
   {
     id: "services",
     name: "Services",
-    href: "",
   },
   {
     id: "réservation",
     name: "Réservation",
-    href: "",
   },
   {
     id: "conditions_de_location",
     name: "Conditions de location",
-    href: "",
   },
   {
     id: "contacts",
     name: "Contacts",
-    href: "",
   },
 ];
 
@@ -92,7 +86,7 @@ const Navbar = () => {
 
   return (
     <div
-      className={`navbar fixed top-0 z-10 lg:px-16 ${
+      className={`navbar fixed top-0 z-[99] lg:px-16 ${
         showNavbar
           ? "backdrop-blur shadow-sm dark:shadow-md bg-white/90 dark:bg-primary-dark-light/70"
           : "bg-white dark:bg-[#0a0c0f]"

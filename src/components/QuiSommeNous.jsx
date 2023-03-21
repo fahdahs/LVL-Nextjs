@@ -23,8 +23,8 @@ export default function QuiSommeNous() {
               location de voiture.
             </Typography>
             <Typography
-              variant="paragraph"
-              className="mt-4 text-gray-500 dark:text-gray-300"
+              variant="lead"
+              className="mt-4 text-base text-gray-500 dark:text-gray-300"
             >
               Quelque soit la voiture souhaité, Location de voiture laayoune
               vous garantit les meilleurs tarifs en ligne pour votre voiture
@@ -36,7 +36,7 @@ export default function QuiSommeNous() {
             <ul className="gap-6 mt-8 md:grid md:grid-cols-2">
               <li className="mt-6 lg:mt-0">
                 <div className="flex">
-                  <span className="flex items-center justify-center flex-shrink-0 w-6 h-6 text-blue-800 bg-blue-100 rounded-full dark:text-blue-500 drark:bg-transparent">
+                  <span className="flex items-center justify-center flex-shrink-0 w-6 h-6 text-white bg-blue-600 rounded-full dark:bg-blue-500 drark:bg-transparent">
                     <svg
                       className="w-4 h-4"
                       viewBox="0 0 20 20"
@@ -56,7 +56,7 @@ export default function QuiSommeNous() {
               </li>
               <li className="mt-6 lg:mt-0">
                 <div className="flex">
-                  <span className="flex items-center justify-center flex-shrink-0 w-6 h-6 text-blue-800 bg-blue-100 rounded-full dark:text-blue-500 drark:bg-transparent">
+                  <span className="flex items-center justify-center flex-shrink-0 w-6 h-6 text-white bg-blue-600 rounded-full dark:bg-blue-500 drark:bg-transparent">
                     <svg
                       className="w-4 h-4"
                       viewBox="0 0 20 20"
@@ -76,7 +76,7 @@ export default function QuiSommeNous() {
               </li>
               <li className="mt-6 lg:mt-0">
                 <div className="flex">
-                  <span className="flex items-center justify-center flex-shrink-0 w-6 h-6 text-blue-800 bg-blue-100 rounded-full dark:text-blue-500 drark:bg-transparent">
+                  <span className="flex items-center justify-center flex-shrink-0 w-6 h-6 text-white bg-blue-600 rounded-full dark:bg-blue-500 drark:bg-transparent">
                     <svg
                       className="w-4 h-4"
                       viewBox="0 0 20 20"
@@ -96,7 +96,7 @@ export default function QuiSommeNous() {
               </li>
               <li className="mt-6 lg:mt-0">
                 <div className="flex">
-                  <span className="flex items-center justify-center flex-shrink-0 w-6 h-6 text-blue-800 bg-blue-100 rounded-full dark:text-blue-500 drark:bg-transparent">
+                  <span className="flex items-center justify-center flex-shrink-0 w-6 h-6 text-white bg-blue-600 rounded-full dark:bg-blue-500 drark:bg-transparent">
                     <svg
                       className="w-4 h-4"
                       viewBox="0 0 20 20"

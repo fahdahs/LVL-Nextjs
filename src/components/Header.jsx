@@ -50,13 +50,13 @@ export default function HeroSection() {
                     <Typography
                       variant="h1"
                       color="white"
-                      className="md:text-5xl text-3xl"
+                      className="uppercase"
                     >
                       À Partir de 195 Dhs Par jour !
                     </Typography>
                     <Typography
-                      className="h-12 mt-6 md:text-3xl text-lg"
-                      variant="h2"
+                      className="md:h-24 lg:h-16 h-28 mt-6 uppercase"
+                      variant="h3"
                       color="white"
                     >
                       <span>{text}</span>
