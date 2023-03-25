@@ -1,33 +1,30 @@
 import Image from "next/image";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import heroImage from "../assets/heroImage.webp";
 
 import { Button, Tooltip, Typography } from "@/client/material-tailwind";
-// FLAGS
-import maroc from "../assets/morocco.png";
-import france from "../assets/france.png";
-import uk from "../assets/united-kingdom.png";
 
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 
 import QuiSommeNous from "./QuiSommeNous";
 import PourquoiNousChoisir from "./PourquoiNousChoisir";
-import { setOpen } from "@/app/factor-slice";
-import Modal from "@/shared/Modal";
 
-export default function HeroSection() {
-  const [text] = useTypewriter({
-    words: ["Seulment dans notre agence", "Location de voiture laayoune"],
-    loop: false,
-    typeSpeed: 50,
-    delaySpeed: 1700,
-    deleteSpeed: 25,
-  });
+import { motion } from "framer-motion";
+
+import logo1 from "../assets/pic1.png";
+import logo2 from "../assets/pic2.png";
+import logo3 from "../assets/pic3.png";
+import logo4 from "../assets/pic4.png";
+import logo5 from "../assets/pic5.png";
+
+import LanguageSwitcher from "@/i18n/LanguageSwitcher";
+import { withTranslation } from "react-i18next";
+
+function Header({ t }) {
   const dispatch = useDispatch();
 
   return (
     <>
-      <Modal />
       <div className="bg-white relative pt-24 dark:bg-[#0a0c0f]">
         <main>
           <div>
@@ -46,51 +43,27 @@ export default function HeroSection() {
                     <div className="absolute inset-0 bg-black/50 mix-blend-multiply" />
                     <div className="absolute top-0 left-0 w-full h-36 bg-gradient-to-b from-black/80 to-transparent mix-blend-multiply" />
                   </div>
-                  <div className="relative px-4 py-16 text-center sm:px-6 sm:py-24 lg:py-32 lg:px-8">
+                  <motion.div
+                    initial={{ y: -40, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    className="relative px-4 py-16 text-center sm:px-6 sm:py-24 lg:py-32 lg:px-8"
+                  >
                     <Typography
                       variant="h1"
                       color="white"
                       className="uppercase"
                     >
-                      À Partir de 195 Dhs Par jour !
+                      {t("header title")}
                     </Typography>
                     <Typography
-                      className="md:h-24 lg:h-16 h-28 mt-6 uppercase"
-                      variant="h3"
+                      className="mt-4"
+                      variant="lead"
                       color="white"
                     >
-                      <span>{text}</span>
-                      <Cursor cursorColor="#1e88e5" cursorStyle="_" />
+                      {t("header subtitle")}
                     </Typography>
 
-                    <div className="w-full mb-4 flex items-center justify-center mt-5 space-x-8">
-                      <div className="flex justify-center items-center w-full space-x-8">
-                        <Tooltip content="العربية">
-                          <span className="h-[34px] w-[34px] scale-100 hover:scale-105 cursor-pointer">
-                            <Image
-                              src={maroc}
-                              alt="location-voiture-laayoune-arabic"
-                            />
-                          </span>
-                        </Tooltip>
-                        <Tooltip content="English">
-                          <span className="h-8 w-8 scale-100 hover:scale-105 cursor-pointer">
-                            <Image
-                              src={uk}
-                              alt="location-voiture-laayoune-English"
-                            />
-                          </span>
-                        </Tooltip>
-                        <Tooltip content="Français">
-                          <span className="h-8 w-8 scale-100 hover:scale-105 cursor-pointer">
-                            <Image
-                              src={france}
-                              alt="location-voiture-laayoune-Français"
-                            />
-                          </span>
-                        </Tooltip>
-                      </div>
-                    </div>
+                    <LanguageSwitcher />
 
                     <Typography variant="lead" className="text-gray-300">
                       Choisissez votre langue
@@ -99,7 +72,6 @@ export default function HeroSection() {
                       <div className="space-y-4 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5 sm:space-y-0">
                         <Tooltip content="Réservez maintenant en seulement 2 clics!">
                           <Button
-                            onClick={() => dispatch(setOpen(true))}
                             color="white"
                             ripple={false}
                             className="text-[#1e88e5] block w-full py-4"
@@ -115,7 +87,7 @@ export default function HeroSection() {
                         </Tooltip>
                       </div>
                     </div>
-                  </div>
+                  </motion.div>
                 </div>
               </div>
             </div>
@@ -125,39 +97,36 @@ export default function HeroSection() {
               <div className="mx-auto max-w-7xl pb-6 pt-10 px-4 sm:px-6 lg:px-8">
                 <div className="mt-6 grid grid-cols-2 gap-8 md:grid-cols-6 lg:grid-cols-5">
                   <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
-                    <img
-                      className="h-12"
-                      src="https://tailwindui.com/img/logos/tuple-logo-gray-400.svg"
-                      alt="Tuple"
+                    <Image
+                      className="h-16 w-48 -m-2"
+                      src={logo1}
+                      alt="toyota"
                     />
                   </div>
                   <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
-                    <img
-                      className="h-12"
-                      src="https://tailwindui.com/img/logos/mirage-logo-gray-400.svg"
-                      alt="Mirage"
+                    <Image
+                      id="qui_nous_sommes"
+                      className="h-16 w-40 -mt-1.5"
+                      src={logo2}
+                      alt="toyota"
                     />
                   </div>
                   <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
-                    <img
-                      className="h-12"
-                      src="https://tailwindui.com/img/logos/statickit-logo-gray-400.svg"
-                      alt="StaticKit"
+                    <Image
+                      className="h-10 w-28 mt-1.5"
+                      src={logo3}
+                      alt="audit"
                     />
                   </div>
                   <div className="col-span-1 flex justify-center md:col-span-2 md:col-start-2 lg:col-span-1">
-                    <img
-                      className="h-12"
-                      src="https://tailwindui.com/img/logos/transistor-logo-gray-400.svg"
-                      alt="Transistor"
+                    <Image
+                      className="h-10 w-32 mt-1.5"
+                      src={logo4}
+                      alt="hyundai"
                     />
                   </div>
                   <div className="col-span-2 flex justify-center md:col-span-2 md:col-start-4 lg:col-span-1">
-                    <img
-                      className="h-12"
-                      src="https://tailwindui.com/img/logos/workcation-logo-gray-400.svg"
-                      alt="Workcation"
-                    />
+                    <Image className="h-12 w-40" src={logo5} alt="nissan" />
                   </div>
                 </div>
               </div>
@@ -178,3 +147,5 @@ export default function HeroSection() {
     </>
   );
 }
+
+export default withTranslation()(Header);

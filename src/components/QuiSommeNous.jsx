@@ -4,12 +4,13 @@ import Image from "next/image";
 import image_1 from "../assets/1.jpg";
 import image_3 from "../assets/3.jpg";
 import image_2 from "../assets/2.webp";
-import image_4 from "../assets/4.jpg"
+import image_4 from "../assets/4.jpg";
+import { motion } from "framer-motion";
 
 export default function QuiSommeNous() {
   return (
     <>
-      <div className="relative mt-24">
+      <div className="relative">
         <div className="lg:grid lg:grid-flow-row-dense lg:grid-cols-2 lg:gap-8 lg:items-center">
           <div className="ml-auto lg:col-start-2 lg:max-w-2xl">
             <Typography variant="h4" className="text-blue-700 dark:text-500">
@@ -50,7 +51,7 @@ export default function QuiSommeNous() {
                     </svg>
                   </span>
                   <span className="ml-4 text-base font-medium leading-6 text-gray-500 dark:text-gray-200">
-                    Live modifications
+                    Réservation facile
                   </span>
                 </div>
               </li>
@@ -70,7 +71,7 @@ export default function QuiSommeNous() {
                     </svg>
                   </span>
                   <span className="ml-4 text-base font-medium leading-6 text-gray-500 dark:text-gray-200">
-                    Data tracker
+                    Prix ​​spéciaux
                   </span>
                 </div>
               </li>
@@ -90,7 +91,7 @@ export default function QuiSommeNous() {
                     </svg>
                   </span>
                   <span className="ml-4 text-base font-medium leading-6 text-gray-500 dark:text-gray-200">
-                    24/24 support
+                    supporte 24/24
                   </span>
                 </div>
               </li>
@@ -110,7 +111,7 @@ export default function QuiSommeNous() {
                     </svg>
                   </span>
                   <span className="ml-4 text-base font-medium leading-6 text-gray-500 dark:text-gray-200">
-                    Free tips to improve work time
+                    Paiement à la livraison
                   </span>
                 </div>
               </li>
@@ -118,38 +119,47 @@ export default function QuiSommeNous() {
           </div>
           <div className="relative mt-10 lg:-mx-4 relative-20 lg:mt-0 lg:col-start-1">
             <div className="relative space-y-4">
-              <div className="flex items-end justify-center space-x-4 lg:justify-start">
+              <motion.div
+                initial={{ x: -30, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                className="flex items-end justify-center space-x-4 lg:justify-start"
+              >
                 <Image
                   className="w-32 rounded-lg shadow-lg md:w-56"
                   width={400}
                   height={400} // Added height property
                   src={image_1}
-                  alt="Landscape" // Changed alt text to a descriptive string
+                  alt="location de voiture laayoune agence" // Changed alt text to a descriptive string
                 />
                 <Image
                   className="w-40 rounded-lg shadow-lg md:w-64"
                   width={400}
-                  height={400}  // Added height property
+                  height={400} // Added height property
                   src={image_2}
-                  alt="Landscape" // Changed alt text to a descriptive string
+                  alt="location de voiture laayoune aéroport laayoune" // Changed alt text to a descriptive string
                 />
-              </div>
-              <div className="flex items-start justify-center ml-12 space-x-4 lg:justify-start">
+              </motion.div>
+              <motion.div
+                initial={{ x: 30, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                className="flex items-start justify-center ml-12 space-x-4 lg:justify-start"
+              >
                 <Image
                   className="w-24 bg-gray-50 rounded-lg shadow-lg md:w-40"
                   width={400}
-                  height={400}  // Added height property
+                  height={400} // Added height property
                   src={image_4}
-                  alt="Landscape" // Changed alt text to a descriptive string
+                  alt="location de voiture laayoune agence véchule" // Changed alt text to a descriptive string
                 />
                 <Image
                   className="w-32 rounded-lg shadow-lg md:w-56"
                   width={400}
-                  height={400}  // Added height property
+                  height={400} // Added height property
                   src={image_3}
-                  alt="Landscape" // Changed alt text to a descriptive string
+                  id="services"
+                  alt="location de voiture laayoune agence jet Sahara" // Changed alt text to a descriptive string
                 />
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>

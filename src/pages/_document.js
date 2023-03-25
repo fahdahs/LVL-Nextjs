@@ -4,7 +4,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head />
-      <body className='dark:bg-primary-dark'>
+      <body className='scrollbar scrollbar-thumb-blue-600 scrollbar-track-gray-100'>
         <Main />
         <NextScript />
       </body>

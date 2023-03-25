@@ -1,5 +1,6 @@
 import { Button, Typography } from "@/client/material-tailwind";
-import React from "react";
+import { motion } from "framer-motion";
+import { BsAirplane } from "react-icons/bs";
 
 export default function Contact() {
   return (
@@ -10,7 +11,10 @@ export default function Contact() {
           <div className="-mx-4 flex flex-wrap lg:justify-between">
             <div className="w-full px-4 lg:w-1/2 xl:w-6/12">
               <div className="mb-12 max-w-[570px] lg:mb-0">
-                <Typography variant="h5" className="text-blue-600 dark:text-blue-500 mb-2.5 dark:text-500">
+                <Typography
+                  variant="h5"
+                  className="text-blue-600 dark:text-blue-500 mb-2.5 dark:text-500"
+                >
                   Contactez-nous
                 </Typography>
                 <h2 className="text-gray-900 dark:text-gray-100 mb-6 text-[32px] font-bold uppercase sm:text-[40px] lg:text-[36px] xl:text-[40px]">
@@ -33,10 +37,23 @@ export default function Contact() {
                   </div>
                   <div className="w-full">
                     <h4 className="text-gray-900 dark:text-gray-100 mb-1 text-xl font-bold">
-                      Notre emplacement
+                      Agence Laayoune
                     </h4>
                     <p className="text-body-color dark:text-gray-300 text-base">
-                      Boulevard Mekka, 70 000 Laayoune – Maroc
+                      N37 Av Miloud Khaloufi, Laayoune
+                    </p>
+                  </div>
+                </div>
+                <div className="mb-8 flex w-full max-w-[370px]">
+                  <div className="bg-[#2563eb] text-[#2563eb] mr-6 flex h-[60px] w-full max-w-[60px] items-center justify-center overflow-hidden rounded bg-opacity-5 sm:h-[70px] sm:max-w-[70px]">
+                    <BsAirplane className="w-7 h-7" />
+                  </div>
+                  <div className="w-full">
+                    <h4 className="text-gray-900 dark:text-gray-100 mb-1 text-xl font-bold">
+                      Aéroport Laayoune
+                    </h4>
+                    <p className="text-body-color dark:text-gray-300 text-base">
+                      Aéroport Laâyoune Hassan 1er El Aaiún, 70000
                     </p>
                   </div>
                 </div>
@@ -54,38 +71,26 @@ export default function Contact() {
                     </svg>
                   </div>
                   <div className="w-full">
-                    <h4 className="text-gray-900 dark:text-gray-100 mb-1 text-xl font-bold">
+                    <h4
+                      id="contacts"
+                      className="text-gray-900 dark:text-gray-100 mb-1 text-xl font-bold"
+                    >
                       Numéro de téléphone
                     </h4>
                     <p className="text-body-color dark:text-gray-300 text-base">
-                      +212 000 000 000
-                    </p>
-                  </div>
-                </div>
-                <div className="mb-8 flex w-full max-w-[370px]">
-                  <div className="bg-[#2563eb] text-[#2563eb] mr-6 flex h-[60px] w-full max-w-[60px] items-center justify-center overflow-hidden rounded bg-opacity-5 sm:h-[70px] sm:max-w-[70px]">
-                    <svg
-                      width={28}
-                      height={19}
-                      viewBox="0 0 28 19"
-                      className="fill-current"
-                    >
-                      <path d="M25.3636 0H2.63636C1.18182 0 0 1.16785 0 2.6052V16.3948C0 17.8322 1.18182 19 2.63636 19H25.3636C26.8182 19 28 17.8322 28 16.3948V2.6052C28 1.16785 26.8182 0 25.3636 0ZM25.3636 1.5721C25.5909 1.5721 25.7727 1.61702 25.9545 1.75177L14.6364 8.53428C14.2273 8.75886 13.7727 8.75886 13.3636 8.53428L2.04545 1.75177C2.22727 1.66194 2.40909 1.5721 2.63636 1.5721H25.3636ZM25.3636 17.383H2.63636C2.09091 17.383 1.59091 16.9338 1.59091 16.3499V3.32388L12.5 9.8818C12.9545 10.1513 13.4545 10.2861 13.9545 10.2861C14.4545 10.2861 14.9545 10.1513 15.4091 9.8818L26.3182 3.32388V16.3499C26.4091 16.9338 25.9091 17.383 25.3636 17.383Z" />
-                    </svg>
-                  </div>
-                  <div className="w-full">
-                    <h4 className="text-gray-900 dark:text-gray-100 mb-1 text-xl font-bold">
-                      Adresse courriel
-                    </h4>
-                    <p className="text-body-color dark:text-gray-300 text-base">
-                      contact@lvl.com
+                      +212 660-303334
                     </p>
                   </div>
                 </div>
               </div>
             </div>
             <div className="w-full px-4 lg:w-1/2 xl:w-5/12">
-              <div className="relative rounded-lg bg-white dark:bg-[#0e141b] p-8 shadow-lg sm:p-12">
+              <motion.div
+                initial={{ x: -40, y: 40, opacity: 0, scale: 0.5 }}
+                whileInView={{ x: 0, y: 0, opacity: 1, scale: 1}}
+                viewport={{ once: true }}
+                className="relative rounded-lg bg-white dark:bg-[#0e141b] p-8 shadow-lg sm:p-12"
+              >
                 <form>
                   <div className="mb-6">
                     <input
@@ -117,11 +122,7 @@ export default function Contact() {
                     />
                   </div>
                   <div>
-                    <Button
-                      color="blue"
-                      type="submit"
-                      className="w-full"
-                    >
+                    <Button color="blue" type="submit" className="w-full py-4">
                       Envoyez-nous
                     </Button>
                   </div>
@@ -934,7 +935,7 @@ export default function Contact() {
                     </svg>
                   </span>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>

@@ -1,14 +1,20 @@
 import { Typography } from "@/client/material-tailwind";
+import { motion } from "framer-motion";
 
 export default function Categories({ children }) {
   return (
     <div className="bg-gray-100 overflow-x-hidden dark:bg-primary-dark pt-8 pb-8 md:pb-24 relative">
-      <div className="mb-24 md:text-center text-start px-4">
+      <motion.div
+        initial={{ y: 200, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ once: true }}
+        className="mb-24 md:text-center text-start px-4"
+      >
         <Typography
           variant="h5"
           className="text-blue-600 dark:text-blue-500 mb-2.5 dark:text-500"
         >
-          Conditions
+          Catégories
         </Typography>
         <Typography
           variant="h2"
@@ -23,7 +29,7 @@ export default function Categories({ children }) {
           vous pouvez être sûr que vous bénéficierez d{"'"}un service de qualité
           supérieure et d{"'"}un véhicule en parfait état pour votre voyage.
         </Typography>
-      </div>
+      </motion.div>
       <ul
         role="list"
         className="grid lg:mb-52 mb-24 max-w-7xl px-4 mx-auto grid-cols-1 lg:gap-12 gap-4 md:grid-cols-2 lg:grid-cols-3"

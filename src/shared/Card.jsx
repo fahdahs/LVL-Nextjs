@@ -3,10 +3,12 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { AiFillStar } from "react-icons/ai";
 import { motion as m } from "framer-motion";
 import ImageUrlBuilder from "@sanity/image-url";
-import { Button } from "@/client/material-tailwind";
+import { Button, Typography } from "@/client/material-tailwind";
 
 import { client } from "@/utils/sanity-client";
 import Image from "next/image";
+import { useDispatch } from "react-redux";
+import { setIdCar, setSelectedCar } from "@/config/factor-slice";
 
 const builder = ImageUrlBuilder(client);
 
@@ -20,6 +22,7 @@ export default function Card({
   bags,
   slug,
 }) {
+  const dispatch = useDispatch()
   return (
     <m.li
       initial={{
@@ -83,19 +86,22 @@ export default function Card({
         </dl>
       </div>
       <div className="flex flex-col w-full items-center justify-center pb-4">
-        <Button
-          onClick={() => {}}
-          className="flex items-center justify-center py-4 gap-3 w-[85%]"
+        <label
+        onClick={()=>dispatch(setIdCar(id))}
+          htmlFor="my-modal-categorie"
+          className="btn btn-primary text-white w-[85%]"
         >
-          <GiCarKey strokeWidth={2} className="h-5 w-5" />
-          Réserve
-        </Button>
+          <Typography variant="small" className="flex font-semibold items-center justify-center space-x-3">
+            <GiCarKey trokeWidth={2} className="h-5 w-5"/>
+            <span>Réserver</span>
+          </Typography>
+        </label>
         <Button
           color="green"
           className="flex items-center justify-center py-4 mt-2.5 gap-3 w-[85%]"
         >
           <FaPhoneAlt strokeWidth={2} className="h-4 w-4" />
-          Contact
+          Appellez-nous
         </Button>
       </div>
     </m.li>

@@ -13,15 +13,40 @@ module.exports = withMT({
     // Or if using `src` directory:
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  daisyui: {
+    themes: [
+      {
+        mytheme: {
+          primary: "#0284c7",
+
+          secondary: "#F000B8",
+
+          accent: "#37CDBE",
+
+          neutral: "#3D4451",
+
+          "base-100": "#FFFFFF",
+
+          info: "#3ABFF8",
+
+          success: "#36D399",
+
+          warning: "#FBBD23",
+
+          error: "#F87272",
+        },
+      },
+    ],
+  },
   theme: {
     extend: {
       colors: {
         "primary-dark-light": "#1A232E",
         "white-dark": "#c7c7c7",
         "primary-dark": "#0d1117",
-        "secondary-dark": "#1A232E"
-      }
+        "secondary-dark": "#1A232E",
+      },
     },
   },
-  plugins: [require("daisyui"), require('@tailwindcss/aspect-ratio')],
+  plugins: [require("daisyui"),  require('tailwind-scrollbar')],
 });

@@ -5,10 +5,11 @@ import { BiMoon, BiSun } from "react-icons/bi";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import LanguageSwitcher from "@/i18n/LanguageSwitcher";
 
 const navLinks = [
   {
-    id: "",
+    id: "#",
     name: "Accueil",
   },
   {
@@ -128,13 +129,14 @@ const Navbar = () => {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 dark:bg-primary-dark-light dark:shadow-2xl dark:second-dark"
+            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 dark:bg-primary-dark-light dark:shadow-2xl"
           >
             {navLinks.map(({ id, name }) => (
               <li key={id}>
-                <Link href={`#${id}`}>{name}</Link>
+                <Link href={`#${id}`} className="dark:text-gray-200 hover:dark:bg-neutral">{name}</Link>
               </li>
             ))}
+            <LanguageSwitcher />
           </ul>
         </motion.div>
       </div>

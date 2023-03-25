@@ -12,30 +12,41 @@ import "swiper/css/free-mode";
 
 import { Autoplay, FreeMode } from "swiper";
 import { Typography } from "@/client/material-tailwind";
-
+import { motion } from "framer-motion";
 
 export default function PourquoiNousChoisir() {
   return (
     <div className="mt-32">
       <div className="-mx-4 flex flex-wrap">
         <div className="w-full px-4">
-          <div className="mb-12 md:text-center text-start lg:mb-20">
+          <motion.div
+            initial={{ y: 200, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{once:true}}
+            className="mb-12 md:text-center text-start lg:mb-20"
+          >
             <Typography
               variant="h5"
               className="text-blue-600 dark:text-blue-500 mb-2.5 dark:text-500"
             >
-            Pourquoi nous choisir
+              Pourquoi nous choisir
             </Typography>
-            <Typography variant="h2" className="capitalize md:text-5xl text-3xl text-gray-900 dark:text-gray-100 mb-4 font-bold">
+            <Typography
+              variant="h2"
+              className="capitalize md:text-5xl text-3xl text-gray-900 dark:text-gray-100 mb-4 font-bold"
+            >
               Location de Voiture Laayoune
             </Typography>
-            <Typography variant="lead" className="mx-auto md:text-base mt-5 max-w-prose text-gray-500 dark:text-gray-300">
+            <Typography
+              variant="lead"
+              className="mx-auto md:text-base mt-5 max-w-prose text-gray-500 dark:text-gray-300"
+            >
               Si vous choisissez notre service de location de voiture,vous avez
               opté pour un service de qualité supérieure.ous nous engageons à
               vous fournir une expérience de location de voiture facile,
               pratique et sans tracas.
             </Typography>
-          </div>
+          </motion.div>
         </div>
       </div>
       <div className="item-center justify-center gap-8 text-center sm:flex">
@@ -91,6 +102,7 @@ export default function PourquoiNousChoisir() {
               Un grand choix de véhicules
             </h3>
             <Typography
+            id="réservation"
               variant="small"
               className="text-gray-500 dark:text-gray-300"
             >

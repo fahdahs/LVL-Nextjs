@@ -1,5 +1,8 @@
-import { store } from "@/app/store";
+import { store } from "@/config/store";
 import { Provider } from "react-redux";
+
+import '@/i18n';
+
 
 import "@/styles/globals.css";
 
