@@ -21,7 +21,7 @@ function LanguageSwitcher() {
       <div className="w-full mb-4 flex items-center justify-center mt-5 space-x-8">
         <div className="flex justify-center items-center w-full space-x-4">
           <Tooltip content="العربية">
-            <span className="h-[34px] w-[34px] scale-100 hover:scale-105 cursor-pointer">
+            <span onClick={() => handleLanguageChange("ar")} className="h-[34px] w-[34px] scale-100 hover:scale-105 cursor-pointer">
               <Image src={ar} alt="location-voiture-laayoune-arabic" />
             </span>
           </Tooltip>
@@ -43,7 +43,7 @@ function LanguageSwitcher() {
           </Tooltip>
           <Tooltip content="española">
             <span
-              onClick={() => handleLanguageChange("fr")}
+              onClick={() => handleLanguageChange("es")}
               className="h-8 w-8 scale-100 hover:scale-105 cursor-pointer"
             >
               <Image src={es} alt="location-voiture-laayoune-Français" />

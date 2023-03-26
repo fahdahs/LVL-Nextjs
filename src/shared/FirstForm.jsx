@@ -120,7 +120,7 @@ export default function FirstForm({ children, carName, carPrice, modalClose }) {
                 className="checkbox dark:checkbox-primary dark:bg-primary-dark-light"
               />
             </div>
-            <div className="ml-3 -m-1.5">
+            <div className="ml-3 mb-3 -m-1.5">
               <label htmlFor="seat" className="text-start  dark:text-gray-50">
                 Siége Bébé
               </label>
