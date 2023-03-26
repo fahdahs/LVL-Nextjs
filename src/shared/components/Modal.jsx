@@ -39,9 +39,9 @@ export default function Modal() {
     <>
       <input type="checkbox" id="my-modal-categorie" className="modal-toggle" />
       <div className="modal">
-        <div className="modal-box scrollbar scrollbar-thumb-blue-600 scrollbar-track-gray-100 md:max-w-xl w-screen md:max-h-[700px] max-h-screen lg:px-8 px-4 rounded-md dark:bg-primary-dark shadow-3xl">
-          <div className="flex pt-4 items-center justify-between">
-            <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100">
+        <div className="modal-box md:max-w-xl w-screen md:min-h-[700px] min-h-screen lg:px-8 px-4 rounded-none md:rounded-md dark:bg-primary-dark shadow-3xl">
+          <div className="flex md:flex-row flex-col pt-4 items-center justify-between">
+            <h2 className="text-xl md:mb-0 mb-4 font-bold text-gray-900 dark:text-gray-100">
               {myCar?.title}
             </h2>
 

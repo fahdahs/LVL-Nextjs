@@ -22,7 +22,7 @@ export default function Card({
   bags,
   slug,
 }) {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   return (
     <m.li
       initial={{
@@ -87,14 +87,12 @@ export default function Card({
       </div>
       <div className="flex flex-col w-full items-center justify-center pb-4">
         <label
-        onClick={()=>dispatch(setIdCar(id))}
+          onClick={() => dispatch(setIdCar(id))}
           htmlFor="my-modal-categorie"
-          className="btn btn-primary text-white w-[85%]"
+          className="btn btn-primary text-white w-[85%] text-[12px]"
         >
-          <Typography variant="small" className="flex font-semibold items-center justify-center space-x-3">
-            <GiCarKey trokeWidth={2} className="h-5 w-5"/>
-            <span>Réserver</span>
-          </Typography>
+          <GiCarKey trokeWidth={2} className="h-5 w-5" />
+          <span className="ml-2">Réserver</span>
         </label>
         <Button
           color="green"

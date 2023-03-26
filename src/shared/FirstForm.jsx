@@ -73,8 +73,8 @@ export default function FirstForm({ children, carName, carPrice }) {
   };
 
   return (
-    <div className="flex-shrink-0 px-6 my-6 relative w-full h-full">
-      <div className="flex flex-col w-full border-opacity-50 my-4">
+    <div className="flex-shrink-0 md:px-6 px-1.5 my-6 relative w-full h-full">
+      <div className="md:flex flex-col w-full border-opacity-50 my-4 hidden">
         <div className="divider text-sm text-gray-600">Assurez-vous que les informations sont correctes</div>
       </div>
       <div className="justify-center">
@@ -164,7 +164,7 @@ export default function FirstForm({ children, carName, carPrice }) {
             onClick={handleNext}
             className="btn btn-primary btn-block text-[12px] text-white"
           >
-            Reserve
+            Réserver
           </button>
           <div className="modal-action w-full">
             <label
@@ -172,7 +172,7 @@ export default function FirstForm({ children, carName, carPrice }) {
               htmlFor="my-modal-categorie"
               className="btn btn-ghost btn-block text-[12px] dark:text-gray-500"
             >
-              Cancel
+              Annuler
             </label>
           </div>
         </div>

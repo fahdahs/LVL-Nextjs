@@ -3,7 +3,6 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   modals: {
     activeForm: 1,
-    confermation: false,
   },
   factore: {
     carPrice: 0,
@@ -44,7 +43,6 @@ const factoreSlice = createSlice({
         ...state,
         modal: {
           activeForm: 1,
-          confermation: false,
         },
         factore: {
           carPrice: 0,
@@ -106,7 +104,7 @@ const factoreSlice = createSlice({
     },
     setAgence: (state, action) => {
       state.factore.agence = action.payload
-    }
+    },
   },
 });
 
@@ -128,7 +126,7 @@ export const {
   setMobile,
   setAdress,
   setEmail,
-  setAgence
+  setAgence,
 } = factoreSlice.actions;
 
 // Export the reducer for the navigation slice
