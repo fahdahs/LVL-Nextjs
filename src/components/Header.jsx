@@ -1,10 +1,8 @@
 import Image from "next/image";
-import { useDispatch } from "react-redux";
 import heroImage from "../assets/heroImage.webp";
 
-import { Button, Tooltip, Typography } from "@/client/material-tailwind";
+import { Button, Typography } from "@/client/material-tailwind";
 
-import { useTypewriter, Cursor } from "react-simple-typewriter";
 
 import QuiSommeNous from "./QuiSommeNous";
 import PourquoiNousChoisir from "./PourquoiNousChoisir";
@@ -19,12 +17,14 @@ import logo5 from "../assets/pic5.png";
 
 import LanguageSwitcher from "@/i18n/LanguageSwitcher";
 import { withTranslation } from "react-i18next";
+import ModalHeader from "@/shared/components/ModalHeader";
 
 function Header({ t }) {
-  const dispatch = useDispatch();
+
 
   return (
     <>
+      <ModalHeader />
       <div className="bg-white relative pt-24 dark:bg-[#0a0c0f]">
         <main>
           <div>
@@ -55,11 +55,7 @@ function Header({ t }) {
                     >
                       {t("header title")}
                     </Typography>
-                    <Typography
-                      className="mt-4"
-                      variant="lead"
-                      color="white"
-                    >
+                    <Typography className="mt-4" variant="lead" color="white">
                       {t("header subtitle")}
                     </Typography>
 
@@ -69,22 +65,19 @@ function Header({ t }) {
                       Choisissez votre langue
                     </Typography>
                     <div className="mx-auto mt-10 max-w-sm sm:flex sm:max-w-none sm:justify-center">
-                      <div className="space-y-4 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5 sm:space-y-0">
-                        <Tooltip content="Réservez maintenant en seulement 2 clics!">
-                          <Button
-                            color="white"
-                            ripple={false}
-                            className="text-[#1e88e5] block w-full py-4"
-                          >
-                            Réserver
-                          </Button>
-                        </Tooltip>
+                      <div className="flex md:space-x-6 space-x-0 md:space-y-0 space-y-5 md:flex-row flex-col items-center justify-center">
+                        <label
+                          htmlFor="my-modal-Header"
+                          className="btn btn-primary text-[12px] text-white btn-wide"
+                        >
+                          Réserver
+                        </label>
 
-                        <Tooltip content="Avez-vous des questions? N’hésitez pas à demander">
-                          <Button className="block w-full py-4">
+                        <a href="tel:+212660303334">
+                          <Button color="white" className="block text-blue-700 py-4 btn-wide">
                             Appellez-Nous
                           </Button>
-                        </Tooltip>
+                        </a>
                       </div>
                     </div>
                   </motion.div>
@@ -108,25 +101,25 @@ function Header({ t }) {
                       id="qui_nous_sommes"
                       className="h-16 w-40 -mt-1.5"
                       src={logo2}
-                      alt="toyota"
+                      alt="hyundai"
                     />
                   </div>
                   <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
                     <Image
-                      className="h-10 w-28 mt-1.5"
+                      className="md:h-10 h-9 md:w-32 w-20 mt-1.5"
                       src={logo3}
                       alt="audit"
                     />
                   </div>
                   <div className="col-span-1 flex justify-center md:col-span-2 md:col-start-2 lg:col-span-1">
                     <Image
-                      className="h-10 w-32 mt-1.5"
+                      className="h-10 md:w-32 w-28 mt-1.5"
                       src={logo4}
-                      alt="hyundai"
+                      alt="dacia"
                     />
                   </div>
                   <div className="col-span-2 flex justify-center md:col-span-2 md:col-start-4 lg:col-span-1">
-                    <Image className="h-12 w-40" src={logo5} alt="nissan" />
+                    <Image className="h-12 w-40" src={logo5} alt="renault" />
                   </div>
                 </div>
               </div>

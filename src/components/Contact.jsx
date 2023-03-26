@@ -10,7 +10,11 @@ export default function Contact() {
         <div className="container mx-auto">
           <div className="-mx-4 flex flex-wrap lg:justify-between">
             <div className="w-full px-4 lg:w-1/2 xl:w-6/12">
-              <div className="mb-12 max-w-[570px] lg:mb-0">
+              <motion.div
+                initial={{ x: -40, y: 40, opacity: 0, scale: 0.5 }}
+                whileInView={{ x: 0, y: 0, opacity: 1, scale: 1 }}
+                className="mb-12 max-w-[570px] lg:mb-0"
+              >
                 <Typography
                   variant="h5"
                   className="text-blue-600 dark:text-blue-500 mb-2.5 dark:text-500"
@@ -82,15 +86,10 @@ export default function Contact() {
                     </p>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             </div>
             <div className="w-full px-4 lg:w-1/2 xl:w-5/12">
-              <motion.div
-                initial={{ x: -40, y: 40, opacity: 0, scale: 0.5 }}
-                whileInView={{ x: 0, y: 0, opacity: 1, scale: 1}}
-                viewport={{ once: true }}
-                className="relative rounded-lg bg-white dark:bg-[#0e141b] p-8 shadow-lg sm:p-12"
-              >
+              <div className="relative rounded-lg bg-white dark:bg-[#0e141b] p-8 shadow-lg sm:p-12">
                 <form>
                   <div className="mb-6">
                     <input
@@ -935,7 +934,7 @@ export default function Contact() {
                     </svg>
                   </span>
                 </div>
-              </motion.div>
+              </div>
             </div>
           </div>
         </div>

@@ -2,43 +2,69 @@ import { Fragment, useEffect, useState } from "react";
 import { Listbox, Transition } from "@headlessui/react";
 import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/20/solid";
 import { useDispatch, useSelector } from "react-redux";
+import carImage from "@/assets/clio 4 diesel.jpg"
 
 import Image from "next/image";
-
-import { client } from "@/utils/sanity-client-react";
+import { StarIcon } from "@heroicons/react/24/solid";
+import { setIdCar } from "@/config/factor-slice";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-const query = `*[_type == "cars"]{
-  id,
-  slug,
-  title,
-  price,
-  "image": image.asset->url
-}`;
-
 export default function SelectCars() {
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    async function fetchData() {
-      const data = await client.fetch(query);
-      return data;
-    }
-    fetchData();
-  }, []);
-  const carsData = useSelector((state) => state.data);
+  const car = {title: "Clio 4 diesel", price: 219, image: carImage, id: 15}
+  const carsData = useSelector((state) => state.data)
 
-  const [selected, setSelected] = useState(carsData[3]);
+  const [selected, setSelected] = useState(car);
+
+  useEffect(() => {
+    dispatch(setIdCar(selected.id))
+  }, [selected, dispatch]);
 
   return (
-    <>
+    <div className="mb-4">
       <Listbox value={selected} onChange={setSelected}>
         {({ open }) => (
           <>
-            <Listbox.Label className="block z-[999] mt-6 text-sm font-medium text-gray-700">
+            <div className="mb-6">
+              <div className="flex md:flex-row flex-col pt-4 items-center justify-between">
+                <h2 className="text-lg text-start md:mb-0 mb-4 font-bold text-gray-900 dark:text-gray-100">
+                  {selected?.title}
+                </h2>
+
+                <section aria-labelledby="information-heading">
+                  <h3 id="information-heading" className="sr-only">
+                    Product information
+                  </h3>
+
+                  <div className="flex items-center text-end">
+                    <p className="text-gray-900 dark:text-gray-300">
+                      {selected?.price} Dh/Jour
+                    </p>
+
+                    <div className="ml-4 border-l border-gray-300 pl-4">
+                      <h4 className="sr-only">Reviews</h4>
+                      <div className="flex items-center">
+                        <div className="flex items-center">
+                          {[0, 1, 2, 3, 4].map((rating) => (
+                            <StarIcon
+                              key={rating}
+                              className="h-4 w-4 flex-shrink-0 text-yellow-400"
+                              aria-hidden="true"
+                            />
+                          ))}
+                        </div>
+                        <p className="sr-only">5 out of 5 stars</p>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+            <Listbox.Label className="block text-gray-700 font-semibold text-sm mb-2 dark:text-gray-50 text-start">
               Choisissez la voiture
             </Listbox.Label>
             <div className="relative mt-1">
@@ -123,6 +149,6 @@ export default function SelectCars() {
           </>
         )}
       </Listbox>
-    </>
+    </div>
   );
 }

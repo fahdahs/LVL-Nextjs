@@ -40,20 +40,14 @@ export default function Card({
         delay: 0.2,
       }}
       viewport={{ once: true }}
-      whileHover={{
-        scale: 1.03,
-        transition: {
-          delay: 0.1,
-        },
-      }}
-      className="col-span-1 flex flex-col dark:divide-primary-dark/50 rounded-lg bg-white dark:bg-primary-dark-light text-center mx-auto shadow cursor-pointer transition-all hover:shadow-xl dark:shadow-[#0a0c0f]"
+      className="col-span-1 w-full flex flex-col dark:divide-primary-dark/50 rounded-lg bg-white dark:bg-primary-dark-light text-center mx-auto shadow cursor-pointer transition-all hover:shadow-xl dark:shadow-[#0a0c0f]"
     >
-      <div className="flex flex-1 flex-col py-8 px-2 h-12">
+      <div className="flex flex-1 w-full flex-col py-8 px-2">
         <Image
-          className="mx-auto w-full flex-shrink-0 rounded-3xl"
+          className="mx-auto w-4/6 flex-shrink-0 rounded-3xl"
           src={builder.image(image).url()}
-          width={300}
-          height={300}
+          width={260}
+          height={260}
           alt={slug}
         />
         <h3 className="mt-6 text-xl font-bold text-gray-900 dark:text-gray-100">
@@ -66,7 +60,7 @@ export default function Card({
             ))}
           </dd>
           <dd className="text-gray-500 dark:text-gray-50 uppercase">
-            de <span className="font-semibold text-gray-600">{price} DHS</span>{" "}
+            de <span className="font-semibold text-gray-600 dark:text-white">{price} DHS</span>{" "}
             PAR JOUR
           </dd>
           <dd className="mt-3 flex justify-center space-x-2.5">
@@ -85,22 +79,23 @@ export default function Card({
           </dd>
         </dl>
       </div>
-      <div className="flex flex-col w-full items-center justify-center pb-4">
+      <div className="flex flex-col px-6 items-center justify-center pb-4">
         <label
           onClick={() => dispatch(setIdCar(id))}
           htmlFor="my-modal-categorie"
-          className="btn btn-primary text-white w-[85%] text-[12px]"
+          className="btn btn-primary text-white text-[12px] btn-block"
         >
           <GiCarKey trokeWidth={2} className="h-5 w-5" />
           <span className="ml-2">Réserver</span>
         </label>
-        <Button
-          color="green"
-          className="flex items-center justify-center py-4 mt-2.5 gap-3 w-[85%]"
+        <a className="hover:animate-pulse" href="tel:212660303334">
+        <button
+          className="flex items-center justify-center mt-2 py-2.5 gap-3 btn-block text-blue-600 dark:text-blue-400"
         >
           <FaPhoneAlt strokeWidth={2} className="h-4 w-4" />
           Appellez-nous
-        </Button>
+        </button>
+        </a>
       </div>
     </m.li>
   );

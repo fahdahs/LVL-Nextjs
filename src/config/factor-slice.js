@@ -41,7 +41,7 @@ const factoreSlice = createSlice({
     setReset: (state, action) => {
       return {
         ...state,
-        modal: {
+        modals: {
           activeForm: 1,
         },
         factore: {

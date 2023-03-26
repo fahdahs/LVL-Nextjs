@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Button } from "@/client/material-tailwind";
+import { useDispatch} from "react-redux";
 import {
   calcPriceTotal,
   setActiveForm,
@@ -14,7 +13,7 @@ import {
   setSeatBaby,
 } from "@/config/factor-slice";
 
-export default function FirstForm({ children, carName, carPrice }) {
+export default function FirstForm({ children, carName, carPrice, modalClose }) {
   const dispatch = useDispatch();
   const [daysValue, setDaysValue] = useState("");
   const [startDate, setStartDate] = useState("");
@@ -74,18 +73,13 @@ export default function FirstForm({ children, carName, carPrice }) {
 
   return (
     <div className="flex-shrink-0 md:px-6 px-1.5 my-6 relative w-full h-full">
-      <div className="md:flex flex-col w-full border-opacity-50 my-4 hidden">
-        <div className="divider text-sm text-gray-600">Assurez-vous que les informations sont correctes</div>
-      </div>
       <div className="justify-center">
-        {/* Select the car */}
         {children}
-
         {/* Input fields for start and end dates */}
         <div className="mb-5">
           <label
             htmlFor="date-start"
-            className="block text-gray-700 font-semibold mb-2 dark:text-gray-50"
+            className="block text-sm text-gray-700 font-semibold mb-2 dark:text-gray-50 text-start"
           >
             Départ
           </label>
@@ -101,7 +95,7 @@ export default function FirstForm({ children, carName, carPrice }) {
         <div className="mb-5">
           <label
             htmlFor="date-end"
-            className="block text-gray-700 font-semibold mb-2"
+            className="block text-sm text-start text-gray-700 font-semibold mb-2"
           >
             Retour
           </label>
@@ -118,7 +112,7 @@ export default function FirstForm({ children, carName, carPrice }) {
         <fieldset className="space-y-5">
           <legend className="sr-only">Notifications</legend>
           <div className="relative flex items-start">
-            <div className="flex h-5 items-center">
+            <div className="flex h-5 items-center justify-center">
               <input
                 onChange={() => setIsSeatBaby((prev) => !prev)}
                 id="seat"
@@ -126,17 +120,17 @@ export default function FirstForm({ children, carName, carPrice }) {
                 className="checkbox dark:checkbox-primary dark:bg-primary-dark-light"
               />
             </div>
-            <div className="ml-3 text-sm">
-              <label htmlFor="seat" className="label-text dark:text-gray-50">
+            <div className="ml-3 -m-1.5">
+              <label htmlFor="seat" className="text-start  dark:text-gray-50">
                 Siége Bébé
               </label>
-              <span className="text-gray-500 dark:text-gray-300 block">
+              <span className="text-gray-500 text-start text-sm dark:text-gray-300 block">
                 40.00 Dhs/Jour
               </span>
             </div>
           </div>
-          <div className="relative flex items-start">
-            <div className="flex h-5 items-center">
+          <div className="relative flex items-start justify-start">
+            <div className="flex items-center justify-start">
               <input
                 onChange={() => setIsGps((prev) => !prev)}
                 id="gps"
@@ -144,11 +138,11 @@ export default function FirstForm({ children, carName, carPrice }) {
                 className="checkbox dark:checkbox-primary dark:bg-primary-dark-light"
               />
             </div>
-            <div className="ml-3 text-sm">
+            <div className="ml-3 -m-1.5">
               <label htmlFor="gps" className="label-text dark:text-gray-50">
                 GPS Gratuit
               </label>
-              <span className="text-gray-500 block dark:text-gray-300">
+              <span className="text-gray-500 block text-start text-sm dark:text-gray-300">
                 0.00 Dhs/Jour
               </span>
             </div>
@@ -169,7 +163,7 @@ export default function FirstForm({ children, carName, carPrice }) {
           <div className="modal-action w-full">
             <label
               onClick={() => dispatch(setReset())}
-              htmlFor="my-modal-categorie"
+              htmlFor={modalClose}
               className="btn btn-ghost btn-block text-[12px] dark:text-gray-500"
             >
               Annuler
