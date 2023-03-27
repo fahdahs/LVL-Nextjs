@@ -124,7 +124,7 @@ export default function PourquoiNousChoisir() {
               variant="small"
               className="text-gray-500 dark:text-gray-300"
             >
-              GPS Gratuit avec votre location de voiture jet sahara, La plupart
+              GPS Gratuit avec votre location de voiture Locationvoiturealaayoune.com, La plupart
               de nos véhicules sont équipées d’un GPS gratuit. Assurez-vous
               d’avoir sélectionné GPS gratuit lors de la réservation
             </Typography>

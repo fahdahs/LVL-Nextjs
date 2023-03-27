@@ -3,12 +3,11 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { AiFillStar } from "react-icons/ai";
 import { motion as m } from "framer-motion";
 import ImageUrlBuilder from "@sanity/image-url";
-import { Button, Typography } from "@/client/material-tailwind";
 
 import { client } from "@/utils/sanity-client";
 import Image from "next/image";
 import { useDispatch } from "react-redux";
-import { setIdCar, setSelectedCar } from "@/config/factor-slice";
+import { setIdCar } from "@/config/factor-slice";
 
 const builder = ImageUrlBuilder(client);
 
@@ -85,14 +84,14 @@ export default function Card({
           htmlFor="my-modal-categorie"
           className="btn btn-primary text-white text-[12px] btn-block"
         >
-          <GiCarKey trokeWidth={2} className="h-5 w-5" />
+          <GiCarKey className="h-5 w-5" />
           <span className="ml-2">Réserver</span>
         </label>
         <a className="hover:animate-pulse" href="tel:212660303334">
         <button
           className="flex items-center justify-center mt-2 py-2.5 gap-3 btn-block text-blue-600 dark:text-blue-400"
         >
-          <FaPhoneAlt strokeWidth={2} className="h-4 w-4" />
+          <FaPhoneAlt  className="h-4 w-4" />
           Appellez-nous
         </button>
         </a>

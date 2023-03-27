@@ -1,6 +1,6 @@
 import { Typography } from "@/client/material-tailwind";
 import image from "@/assets/download.jpg";
-import logo from "@/assets/logoLightMode.png";
+import logo from "@/assets/logo location de voiture laayoune light mode.png";
 import Image from "next/image";
 
 export default function Cta() {

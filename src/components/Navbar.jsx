@@ -1,40 +1,41 @@
 import { useEffect, useState } from "react";
-import logoLightMode from "../assets/lvl.png";
-import logoDarkMode from "../assets/logoLightMode.png";
+import logoLightMode from "@/assets/location de voiture laayoune.png";
+import logoDarkMode from "@/assets/logo location de voiture laayoune light mode.png";
 import { BiMoon, BiSun } from "react-icons/bi";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import LanguageSwitcher from "@/i18n/LanguageSwitcher";
 
-const navLinks = [
-  {
-    id: "#",
-    name: "Accueil",
-  },
-  {
-    id: "qui_nous_sommes",
-    name: "Qui nous sommes",
-  },
-  {
-    id: "services",
-    name: "Services",
-  },
-  {
-    id: "réservation",
-    name: "Réservation",
-  },
-  {
-    id: "conditions_de_location",
-    name: "Conditions de location",
-  },
-  {
-    id: "contacts",
-    name: "Contacts",
-  },
-];
-
 const Navbar = () => {
+  
+  const navLinks = [
+    {
+      id: "#",
+      name: "Accueil",
+    },
+    {
+      id: "qui_nous_sommes",
+      name: "Qui nous sommes",
+    },
+    {
+      id: "services",
+      name: "Services",
+    },
+    {
+      id: "réservation",
+      name: "Réservation",
+    },
+    {
+      id: "conditions_de_location",
+      name: "Conditions de location",
+    },
+    {
+      id: "contacts",
+      name: "Contacts",
+    },
+  ];
+
   // State for dark mode and whether to show navbar
   const [darkMode, setDarkMode] = useState("light");
   const [showNavbar, setShowNavbar] = useState(false);
@@ -133,7 +134,12 @@ const Navbar = () => {
           >
             {navLinks.map(({ id, name }) => (
               <li key={id}>
-                <Link href={`#${id}`} className="dark:text-gray-200 hover:dark:bg-neutral">{name}</Link>
+                <Link
+                  href={`#${id}`}
+                  className="dark:text-gray-200 hover:dark:bg-neutral"
+                >
+                  {name}
+                </Link>
               </li>
             ))}
             <LanguageSwitcher />

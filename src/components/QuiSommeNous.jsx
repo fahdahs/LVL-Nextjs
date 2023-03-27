@@ -27,11 +27,11 @@ export default function QuiSommeNous() {
               variant="lead"
               className="mt-4 text-base text-gray-500 dark:text-gray-300"
             >
-              Quelque soit la voiture souhaité, Location de voiture laayoune
-              vous garantit les meilleurs tarifs en ligne pour votre voiture
-              louée à Laayoune avec un prix raisonnable à partir de 195.00 MAD,
+              Quelque soit la voiture souhaité, <a href="https://locationdevoiturealaayoune.com/">Location de voiture laayoune</a>{" "}
+               vous garantit les meilleurs tarifs en ligne pour votre voiture
+              louée à Laayoune avec <b>un prix raisonnable à partir de 195.00 MAD</b>,
               et vous disposez d{"'"}un large choix de véhicule avec un GPS
-              gratuit et un siège bébé à 40.00 MAD par jour pour la période de
+              gratuit et <b>un siège bébé à 40.00 MAD</b> par jour pour la période de
               votre choix quelque soit longue ou courte.
             </Typography>
             <ul className="gap-6 mt-8 md:grid md:grid-cols-2">

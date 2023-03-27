@@ -15,7 +15,7 @@ function classNames(...classes) {
 export default function SelectCars() {
   const dispatch = useDispatch();
 
-  const car = {title: "Clio 4 diesel", price: 219, image: carImage, id: 15}
+  const car = {title: "Clio 4 diesel", price: 219, image: carImage, id: 15, slug: "Clio-4-Diesel"}
   const carsData = useSelector((state) => state.data)
 
   const [selected, setSelected] = useState(car);
@@ -25,7 +25,7 @@ export default function SelectCars() {
   }, [selected, dispatch]);
 
   return (
-    <div className="mb-4">
+    <div className="mb-2">
       <Listbox value={selected} onChange={setSelected}>
         {({ open }) => (
           <>
@@ -68,7 +68,7 @@ export default function SelectCars() {
               Choisissez la voiture
             </Listbox.Label>
             <div className="relative mt-1">
-              <Listbox.Button className="relative w-full cursor-default rounded-md border border-gray-300 bg-white py-2 pl-3 pr-10 text-left shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 sm:text-sm">
+              <Listbox.Button className="relative w-full cursor-default rounded-md border border-gray-300 dark:bg-primary-dark-light dark:border-primary-dark dark:text-gray-200 bg-white py-2 pl-3 pr-10 text-left shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 sm:text-sm">
                 <span className="flex items-center">
                   <Image
                     src={selected?.image}
@@ -94,13 +94,13 @@ export default function SelectCars() {
                 leaveFrom="opacity-100"
                 leaveTo="opacity-0"
               >
-                <Listbox.Options className="absolute z-10 mt-1 max-h-56 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+                <Listbox.Options className="absolute z-10 mt-1 max-h-56 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm dark:bg-primary-dark-light">
                   {carsData.map((car) => (
                     <Listbox.Option
                       key={car.id}
                       className={({ active }) =>
                         classNames(
-                          active ? "text-white bg-blue-600" : "text-gray-900",
+                          active ? "text-white bg-blue-600" : "text-gray-900 dark:text-gray-200",
                           "relative cursor-default select-none py-2 pl-3 pr-9"
                         )
                       }
@@ -118,7 +118,7 @@ export default function SelectCars() {
                             />
                             <span
                               className={classNames(
-                                selected ? "font-semibold" : "font-normal",
+                                selected ? "font-semibold dark:text-blue-300" : "font-normal",
                                 "ml-3 block truncate"
                               )}
                             >

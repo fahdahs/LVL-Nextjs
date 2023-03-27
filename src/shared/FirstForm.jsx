@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useDispatch} from "react-redux";
+import { useDispatch, useSelector} from "react-redux";
 import {
   calcPriceTotal,
   setActiveForm,
@@ -71,6 +71,11 @@ export default function FirstForm({ children, carName, carPrice, modalClose }) {
     }
   };
 
+  const dateStart = useSelector(state => state.factore.dateStart);
+  const dateEnd = useSelector(state => state.factore.dateEnd);
+  const seatBaby = useSelector(state => state.factore.seatBaby);
+  const gps = useSelector(state => state.factore.gps);
+
   return (
     <div className="flex-shrink-0 md:px-6 px-1.5 my-6 relative w-full h-full">
       <div className="justify-center">
@@ -89,7 +94,7 @@ export default function FirstForm({ children, carName, carPrice, modalClose }) {
             name="date-start"
             className={`w-full px-4 py-2 border rounded-md focus:outline-none dark:bg-primary-dark-light dark:text-gray-50 ${border}`}
             onChange={handleStartDateChange}
-            value={startDate}
+            value={dateStart}
           />
         </div>
         <div className="mb-5">
@@ -105,7 +110,7 @@ export default function FirstForm({ children, carName, carPrice, modalClose }) {
             name="date-end"
             className={`w-full border px-4 py-2 rounded-md focus:outline-none dark:bg-primary-dark-light dark:text-gray-50 ${border}`}
             onChange={handleEndDateChange}
-            value={endDate}
+            value={dateEnd}
           />
         </div>
         {/* Checkboxes for GPS and seat baby */}
@@ -117,6 +122,7 @@ export default function FirstForm({ children, carName, carPrice, modalClose }) {
                 onChange={() => setIsSeatBaby((prev) => !prev)}
                 id="seat"
                 type="checkbox"
+                checked={seatBaby}
                 className="checkbox dark:checkbox-primary dark:bg-primary-dark-light"
               />
             </div>
@@ -135,6 +141,7 @@ export default function FirstForm({ children, carName, carPrice, modalClose }) {
                 onChange={() => setIsGps((prev) => !prev)}
                 id="gps"
                 type="checkbox"
+                checked={gps ? true : false}
                 className="checkbox dark:checkbox-primary dark:bg-primary-dark-light"
               />
             </div>

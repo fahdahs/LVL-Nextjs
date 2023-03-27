@@ -1,5 +1,5 @@
 import Image from "next/image";
-import heroImage from "../assets/heroImage.webp";
+import heroImage from "../assets/locationvoiturealaayoune.webp";
 
 import { Button, Typography } from "@/client/material-tailwind";
 
