@@ -226,7 +226,6 @@ export default function SecondForm() {
             </button>
             <button
               onClick={() => {
-                dispatch(setReset());
                 dispatch(setActiveForm(1))
               }}
               className="btn btn-ghost btn-block text-[12px] dark:text-gray-500"
