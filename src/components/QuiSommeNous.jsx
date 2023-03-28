@@ -1,6 +1,7 @@
 import { Typography } from "@/client/material-tailwind";
 import Image from "next/image";
-
+//TRANSLATION
+import {t} from 'i18next';
 import image_1 from "../assets/1.jpg";
 import image_3 from "../assets/3.jpg";
 import image_2 from "../assets/2.webp";
@@ -14,25 +15,22 @@ export default function QuiSommeNous() {
         <div className="lg:grid lg:grid-flow-row-dense lg:grid-cols-2 lg:gap-8 lg:items-center">
           <div className="ml-auto lg:col-start-2 lg:max-w-2xl">
             <Typography variant="h4" className="text-blue-700 dark:text-500">
-              Qui Nous Somme ?
+              
+              {t('whoWeAreSmallTitle')}
             </Typography>
             <Typography
               variant="h4"
               className="mt-2 font-bold leading-8 text-gray-900 dark:text-white sm:text-3xl sm:leading-9"
             >
-              Location de voiture laayoune le service numéro 1 au sud de
-              location de voiture.
+              {t('whoWeAreBigTitle')}
+
             </Typography>
             <Typography
               variant="lead"
               className="mt-4 text-base text-gray-500 dark:text-gray-300"
             >
-              Quelque soit la voiture souhaité, <a href="https://locationdevoiturealaayoune.com/">Location de voiture laayoune</a>{" "}
-               vous garantit les meilleurs tarifs en ligne pour votre voiture
-              louée à Laayoune avec <b>un prix raisonnable à partir de 195.00 MAD</b>,
-              et vous disposez d{"'"}un large choix de véhicule avec un GPS
-              gratuit et <b>un siège bébé à 40.00 MAD</b> par jour pour la période de
-              votre choix quelque soit longue ou courte.
+              {t('whoWeAreContent')}
+
             </Typography>
             <ul className="gap-6 mt-8 md:grid md:grid-cols-2">
               <li className="mt-6 lg:mt-0">
@@ -51,7 +49,7 @@ export default function QuiSommeNous() {
                     </svg>
                   </span>
                   <span className="ml-4 text-base font-medium leading-6 text-gray-500 dark:text-gray-200">
-                    Réservation facile
+                  {t('whoWeAreOfferOne')}
                   </span>
                 </div>
               </li>
@@ -71,7 +69,7 @@ export default function QuiSommeNous() {
                     </svg>
                   </span>
                   <span className="ml-4 text-base font-medium leading-6 text-gray-500 dark:text-gray-200">
-                    Prix ​​spéciaux
+                  {t('whoWeAreOfferTwo')}
                   </span>
                 </div>
               </li>
@@ -91,7 +89,7 @@ export default function QuiSommeNous() {
                     </svg>
                   </span>
                   <span className="ml-4 text-base font-medium leading-6 text-gray-500 dark:text-gray-200">
-                    supporte 24/24
+                  {t('whoWeAreOfferThree')}
                   </span>
                 </div>
               </li>
@@ -111,7 +109,7 @@ export default function QuiSommeNous() {
                     </svg>
                   </span>
                   <span className="ml-4 text-base font-medium leading-6 text-gray-500 dark:text-gray-200">
-                    Paiement à la livraison
+                  {t('whoWeAreOfferFour')}
                   </span>
                 </div>
               </li>

@@ -1,8 +1,26 @@
+import { useRef} from "react";
+import emailjs from "emailjs-com";
+
 import { Button, Typography } from "@/client/material-tailwind";
 import { motion } from "framer-motion";
 import { BsAirplane } from "react-icons/bs";
+import { t } from "i18next";
 
 export default function Contact() {
+  const form = useRef();
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    emailjs.sendForm(
+      "service_2i1e0qs",
+      "template_65fxf7w",
+      form.current,
+      "AYrkx1jjG82zspr1b"
+    );
+    alert("done")
+  };
+
+
   return (
     <>
       {/* ====== Contact Section Start */}
@@ -19,14 +37,13 @@ export default function Contact() {
                   variant="h5"
                   className="text-blue-600 dark:text-blue-500 mb-2.5 dark:text-500"
                 >
-                  Contactez-nous
+                  {t('smallTitleForm')}
                 </Typography>
                 <h2 className="text-gray-900 dark:text-gray-100 mb-6 text-[32px] font-bold uppercase sm:text-[40px] lg:text-[36px] xl:text-[40px]">
-                  N’hésitez pas à nous contacter
+                {t('bigTitleForm')}
                 </h2>
                 <p className="text-body-color dark:text-gray-300 mb-9 text-base leading-relaxed">
-                  Vous pouvez nos contacter via Télephone, Email ou bien notre
-                  site web.Vous êtes les bienvenus
+                  {t('formContent')}
                 </p>
                 <div className="mb-8 flex w-full max-w-[370px]">
                   <div className="bg-[#2563eb] text-[#2563eb] mr-6 flex h-[60px] w-full max-w-[60px] items-center justify-center overflow-hidden rounded bg-opacity-5 sm:h-[70px] sm:max-w-[70px]">
@@ -41,10 +58,10 @@ export default function Contact() {
                   </div>
                   <div className="w-full">
                     <h4 className="text-gray-900 dark:text-gray-100 mb-1 text-xl font-bold">
-                      Agence Laayoune
+                    {t('locationCityTitle')}
                     </h4>
                     <p className="text-body-color dark:text-gray-300 text-base">
-                      N37 Av Miloud Khaloufi, Laayoune
+                    {t('locationCity')}
                     </p>
                   </div>
                 </div>
@@ -54,10 +71,10 @@ export default function Contact() {
                   </div>
                   <div className="w-full">
                     <h4 className="text-gray-900 dark:text-gray-100 mb-1 text-xl font-bold">
-                      Aéroport Laayoune
+                    {t('locationAirportTitle')}
                     </h4>
                     <p className="text-body-color dark:text-gray-300 text-base">
-                      Aéroport Laâyoune Hassan 1er El Aaiún, 70000
+                    {t('locationAirport')}
                     </p>
                   </div>
                 </div>
@@ -79,10 +96,10 @@ export default function Contact() {
                       id="contacts"
                       className="text-gray-900 dark:text-gray-100 mb-1 text-xl font-bold"
                     >
-                      Numéro de téléphone
+                      {t('phoneTitle')}
                     </h4>
                     <p className="text-body-color dark:text-gray-300 text-base">
-                      +212 660-303334
+                    {t('phoneNumber')}
                     </p>
                   </div>
                 </div>
@@ -90,39 +107,47 @@ export default function Contact() {
             </div>
             <div className="w-full px-4 lg:w-1/2 xl:w-5/12">
               <div className="relative rounded-lg bg-white dark:bg-[#0e141b] p-8 shadow-lg sm:p-12">
-                <form>
+                <form ref={form} form onSubmit={handleSubmit}>
                   <div className="mb-6">
                     <input
+                    name="nom"
+                      required
                       type="text"
-                      placeholder="Nom"
+                      placeholder={t('inputName')}
                       className="text-body-color dark:bg-secondary-dark dark:text-gray-100 dark:border-gray-900 border-[f0f0f0] focus:border-[#2563eb] w-full rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none"
                     />
                   </div>
                   <div className="mb-6">
                     <input
+                    name="email"
+                      required
                       type="email"
-                      placeholder="Email"
+                      placeholder={t('inputName1')}
                       className="text-body-color dark:bg-secondary-dark dark:text-gray-100 dark:border-gray-900 border-[f0f0f0] focus:border-[#2563eb] w-full rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none"
                     />
                   </div>
                   <div className="mb-6">
                     <input
+                    name="mobile"
+                      required
                       type="text"
-                      placeholder="Téléphone"
+                      placeholder={t('inputName2')}
                       className="text-body-color dark:bg-secondary-dark dark:text-gray-100 dark:border-gray-900 border-[f0f0f0] focus:border-[#2563eb] w-full rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none"
                     />
                   </div>
                   <div className="mb-6">
                     <textarea
+                    name="message"
                       rows={6}
-                      placeholder="Message"
+                      required
+                      placeholder={t('inputName3')}
                       className="text-body-color dark:bg-secondary-dark dark:text-gray-100 dark:border-gray-900 border-[f0f0f0] focus:border-[#2563eb] w-full resize-none rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none"
                       defaultValue={""}
                     />
                   </div>
                   <div>
                     <Button color="blue" type="submit" className="w-full py-4">
-                      Envoyez-nous
+                    {t('formBtn')}
                     </Button>
                   </div>
                 </form>

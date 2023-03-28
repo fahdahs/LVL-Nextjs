@@ -3,13 +3,10 @@ import {
   setActiveForm,
   setAdress,
   setAgence,
-  setCompleteReserve,
   setEmail,
   setFullName,
   setMobile,
-  setReset,
 } from "@/config/factor-slice";
-import { MdOutlineDone } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
 
 import emailjs from "emailjs-com";
@@ -164,7 +161,7 @@ export default function SecondForm() {
             Prix Total :{" "}
           </span>
           <span className="text-blue-600 dark:text-blue-400">
-            {priceTotal} Dhs TTC
+            {priceTotal} DHS TTC
           </span>
         </Typography>
         <select
@@ -181,12 +178,14 @@ export default function SecondForm() {
             onChange={(event) => dispatch(setFullName(event.target.value))}
             label="Nom Compléte"
             className="dark:bg-primary-dark-light dark:text-gray-100"
+            required
           />
           <Input
             value={mobile}
             onChange={(event) => dispatch(setMobile(event.target.value))}
             label="Numéro de téléphone"
             className="dark:bg-primary-dark-light dark:text-gray-100"
+            required
           />
           <Input
             value={email}
@@ -194,12 +193,14 @@ export default function SecondForm() {
             type="email"
             label="Email"
             className="dark:bg-primary-dark-light dark:text-gray-100"
+            required
           />
           <Input
             value={address}
             onChange={(event) => dispatch(setAdress(event.target.value))}
             label="Adresse - Ville"
             className="dark:bg-primary-dark-light dark:text-gray-100"
+            required
           />
         </div>
         <div className="mt-5">

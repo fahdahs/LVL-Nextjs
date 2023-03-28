@@ -1,5 +1,6 @@
 import { Typography } from "@/client/material-tailwind";
 import { motion } from "framer-motion";
+import { t } from "i18next";
 
 export default function Categories({ children }) {
   return (
@@ -14,20 +15,19 @@ export default function Categories({ children }) {
           variant="h5"
           className="text-blue-600 dark:text-blue-500 mb-2.5 dark:text-500"
         >
-          Catégories
+          {t('categoriesSmallTitle')}
         </Typography>
         <Typography
           variant="h2"
           className="capitalize md:text-5xl text-3xl text-gray-900 dark:text-gray-100 mb-4 font-bold"
         >
-          Catégories des véhicules
+          {t('categoriesBigTitle')}
         </Typography>
         <Typography
           variant="lead"
           className="mx-auto mt-5 max-w-prose text-gray-500 dark:text-gray-300"
         >
-          vous pouvez être sûr que vous bénéficierez d{"'"}un service de qualité
-          supérieure et d{"'"}un véhicule en parfait état pour votre voyage.
+         {t('categoriesContent')}
         </Typography>
       </motion.div>
       <ul

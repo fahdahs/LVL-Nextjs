@@ -2,9 +2,12 @@ import { Fragment, useEffect, useState } from "react";
 import { Listbox, Transition } from "@headlessui/react";
 import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/20/solid";
 import { useDispatch, useSelector } from "react-redux";
+//translation 
+import {t} from 'i18next';
 import carImage from "@/assets/clio 4 diesel.jpg"
 
 import Image from "next/image";
+
 import { StarIcon } from "@heroicons/react/24/solid";
 import { setIdCar } from "@/config/factor-slice";
 
@@ -42,7 +45,7 @@ export default function SelectCars() {
 
                   <div className="flex items-center text-end">
                     <p className="text-gray-900 dark:text-gray-300">
-                      {selected?.price} Dh/Jour
+                      {selected?.price} {t('pricePerDay')}
                     </p>
 
                     <div className="ml-4 border-l border-gray-300 pl-4">
@@ -65,7 +68,7 @@ export default function SelectCars() {
               </div>
             </div>
             <Listbox.Label className="block text-gray-700 font-semibold text-sm mb-2 dark:text-gray-50 text-start">
-              Choisissez la voiture
+              {t('ChooseCar')}
             </Listbox.Label>
             <div className="relative mt-1">
               <Listbox.Button className="relative w-full cursor-default rounded-md border border-gray-300 dark:bg-primary-dark-light dark:border-primary-dark dark:text-gray-200 bg-white py-2 pl-3 pr-10 text-left shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 sm:text-sm">

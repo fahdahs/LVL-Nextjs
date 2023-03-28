@@ -8,6 +8,7 @@ import { client } from "@/utils/sanity-client";
 import Image from "next/image";
 import { useDispatch } from "react-redux";
 import { setIdCar } from "@/config/factor-slice";
+import { t } from "i18next";
 
 const builder = ImageUrlBuilder(client);
 
@@ -59,21 +60,21 @@ export default function Card({
             ))}
           </dd>
           <dd className="text-gray-500 dark:text-gray-50 uppercase">
-            de <span className="font-semibold text-gray-600 dark:text-white">{price} DHS</span>{" "}
-            PAR JOUR
+            {t('categoriesCardPrice1')} <span className="font-semibold text-gray-600 dark:text-white">{price} {t('categoriesCardPrice3')}</span>{" "}
+            {t('categoriesCardPrice2')}
           </dd>
           <dd className="mt-3 flex justify-center space-x-2.5">
             <span className="rounded-full flex justify-center items-center bg-blue-100 px-2 py-1 text-xs font-medium text-blue-800">
               <GiCarSeat className="mr-2" />
-              <span>{seats} Seats</span>
+              <span>{seats} {t('categoriesChoiceOne')}</span>
             </span>
             <span className="rounded-full flex justify-center bg-blue-100 px-2 py-1 text-xs font-medium text-blue-800">
               <GiGymBag className="mr-2" />
-              <span>{bags} Bags</span>
+              <span>{bags} {t('categoriesChoiceTwo')}</span>
             </span>
             <span className="rounded-full flex justify-center bg-blue-100 px-2 py-1 text-xs font-medium text-blue-800">
               <GiCarDoor className="mr-2" />
-              <span>{doors} Doors</span>
+              <span>{doors} {t('categoriesChoiceThree')}</span>
             </span>
           </dd>
         </dl>
@@ -85,14 +86,14 @@ export default function Card({
           className="btn btn-primary text-white text-[12px] btn-block"
         >
           <GiCarKey className="h-5 w-5" />
-          <span className="ml-2">Réserver</span>
+          <span className="ml-2">{t('categoriesReserveBtn')}</span>
         </label>
         <a className="hover:animate-pulse" href="tel:212660303334">
         <button
           className="flex items-center justify-center mt-2 py-2.5 gap-3 btn-block text-blue-600 dark:text-blue-400"
         >
           <FaPhoneAlt  className="h-4 w-4" />
-          Appellez-nous
+          {t('categoriesContactBtn')}
         </button>
         </a>
       </div>

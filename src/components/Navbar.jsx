@@ -6,36 +6,10 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import LanguageSwitcher from "@/i18n/LanguageSwitcher";
+//TRANSLATION
+import { t } from "i18next";
 
 const Navbar = () => {
-  
-  const navLinks = [
-    {
-      id: "#",
-      name: "Accueil",
-    },
-    {
-      id: "qui_nous_sommes",
-      name: "Qui nous sommes",
-    },
-    {
-      id: "services",
-      name: "Services",
-    },
-    {
-      id: "réservation",
-      name: "Réservation",
-    },
-    {
-      id: "conditions_de_location",
-      name: "Conditions de location",
-    },
-    {
-      id: "contacts",
-      name: "Contacts",
-    },
-  ];
-
   // State for dark mode and whether to show navbar
   const [darkMode, setDarkMode] = useState("light");
   const [showNavbar, setShowNavbar] = useState(false);
@@ -132,16 +106,54 @@ const Navbar = () => {
             tabIndex={0}
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 dark:bg-primary-dark-light dark:shadow-2xl"
           >
-            {navLinks.map(({ id, name }) => (
-              <li key={id}>
-                <Link
-                  href={`#${id}`}
-                  className="dark:text-gray-200 hover:dark:bg-neutral"
-                >
-                  {name}
-                </Link>
-              </li>
-            ))}
+            <li>
+              <Link
+                href="#"
+                className="dark:text-gray-200 hover:dark:bg-neutral"
+              >
+                {t("NavBar1")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="#qui_nous_sommes"
+                className="dark:text-gray-200 hover:dark:bg-neutral"
+              >
+                {t("NavBar2")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="#services"
+                className="dark:text-gray-200 hover:dark:bg-neutral"
+              >
+                {t("NavBar3")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="#réservation"
+                className="dark:text-gray-200 hover:dark:bg-neutral"
+              >
+                {t("NavBar4")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="#conditions_de_location"
+                className="dark:text-gray-200 hover:dark:bg-neutral"
+              >
+                {t("NavBar5")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="#contacts"
+                className="dark:text-gray-200 hover:dark:bg-neutral"
+              >
+                {t("NavBar6")}
+              </Link>
+            </li>
             <LanguageSwitcher />
           </ul>
         </motion.div>

@@ -2,6 +2,8 @@ import { Typography } from "@/client/material-tailwind";
 import image from "@/assets/download.jpg";
 import logo from "@/assets/logo location de voiture laayoune light mode.png";
 import Image from "next/image";
+//translation 
+import {t} from 'i18next';
 
 export default function Cta() {
   return (
@@ -22,15 +24,12 @@ export default function Cta() {
             <Image className="h-12 opacity-95 w-auto" src={logo} alt="" />
             <blockquote className="mt-6 text-white">
               <Typography variant="lead">
-                Notre véhicule est à votre disposition 7j/7j, si vous avez
-                besoin de plus d’information vous pouvez nous contacter.
-                <br /> vous pouvez nous visiter sur l’adresse suivante:
-                Boulevard Mekka, 70 000 Laayoune – Maroc
+              {t('ctaContent')}
               </Typography>
               <footer className="mt-6">
                 <Typography variant="small">
-                  <span className="block">Location de Voiture Laayoune</span>
-                  <span>Laayoune, Morocco</span>
+                  <span className="block">{t('ctaTitle')}</span>
+                  <span>{t('ctaLocation')}</span>
                 </Typography>
               </footer>
             </blockquote>

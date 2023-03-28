@@ -62,7 +62,7 @@ function Header({ t }) {
                     <LanguageSwitcher />
 
                     <Typography variant="lead" className="text-gray-300">
-                      Choisissez votre langue
+                    {t('headermintitle')}
                     </Typography>
                     <div className="mx-auto mt-10 max-w-sm sm:flex sm:max-w-none sm:justify-center">
                       <div className="flex md:space-x-6 space-x-0 md:space-y-0 space-y-5 md:flex-row flex-col items-center justify-center">
@@ -70,12 +70,12 @@ function Header({ t }) {
                           htmlFor="my-modal-Header"
                           className="btn btn-primary text-[12px] text-white btn-wide"
                         >
-                          Réserver
+                          {t('reserveButton')}
                         </label>
 
                         <a href="tel:+212660303334">
                           <Button color="white" className="block text-blue-700 py-4 btn-wide">
-                            Appellez-Nous
+                          {t('contactButton')}
                           </Button>
                         </a>
                       </div>
