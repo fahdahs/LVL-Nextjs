@@ -90,7 +90,7 @@ export default function Card({
         </label>
         <a className="hover:animate-pulse" href="tel:212660303334">
         <button
-          className="flex items-center justify-center mt-2 py-2.5 gap-3 btn-block text-blue-600 dark:text-blue-400"
+          className="flex items-center justify-center mt-2 py-2.5 gap-3 btn-block text-blue-600 dark:text-blue-400 text-[12px] font-bold"
         >
           <FaPhoneAlt  className="h-4 w-4" />
           {t('categoriesContactBtn')}

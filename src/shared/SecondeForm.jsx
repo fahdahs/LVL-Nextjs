@@ -11,6 +11,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import emailjs from "emailjs-com";
 import { useEffect, useState } from "react";
+import { t } from "i18next";
 
 const CONFIRMATION_STATES = {
   NONE: "none",
@@ -112,7 +113,7 @@ export default function SecondForm() {
                 d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
               />
             </svg>
-            <span className="text-sm text-white">Reservation Compléte!</span>
+            <span className="text-sm text-white">{t('ReserveationCompleted')}</span>
           </div>
         </div>
       )}
@@ -132,7 +133,7 @@ export default function SecondForm() {
                 d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
               />
             </svg>
-            <span className="text-sm">Error! Reservation non Compléte.</span>
+            <span className="text-sm">{t('ReserveationNotCompleted')}</span>
           </div>
         </div>
       )}
@@ -140,7 +141,7 @@ export default function SecondForm() {
         <div className="alert shadow-sm bg-gray-100 py-2.5 dark:bg-blue-gray-600 dark:text-gray-100">
           <div>
             <span class="flex-shrink-0 h-5 w-5 block rounded-full border-4 border-t-blue-300 animate-spin"></span>
-            <span className="text-sm">S{"'"}il vous plaît, attendez</span>
+            <span className="text-sm">{t('waitingMessage')}</span>
           </div>
         </div>
       )}
@@ -148,7 +149,7 @@ export default function SecondForm() {
         <div className="alert shadow-sm py-2.5 bg-gray-100 dark:bg-blue-gray-600 dark:text-gray-100">
         <div>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="stroke-info flex-shrink-0 w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-          <span className="text-sm">Vérifiez bien vos informations.</span>
+          <span className="text-sm">{t("verification")}</span>
         </div>
       </div>
       )}
@@ -158,10 +159,10 @@ export default function SecondForm() {
           className="flex items-center md:justify-start justify-center gap-4 mt-4"
         >
           <span className="text-gray-900 dark:text-gray-50 text-sm md:text-base">
-            Prix Total :{" "}
+            {t('Price')}
           </span>
           <span className="text-blue-600 dark:text-blue-400">
-            {priceTotal} DHS TTC
+            {priceTotal} {t('PriceT')}TTC
           </span>
         </Typography>
         <select
@@ -169,8 +170,8 @@ export default function SecondForm() {
           onChange={(event) => dispatch(setAgence(event.target.value))}
           className="select select-bordered w-full mt-4 dark:bg-primary-dark-light dark:text-gray-100"
         >
-          <option value="Agence Laayoune">Agence Laayoune</option>
-          <option value="Aéroport Laayoune">Aéroport Laayoune</option>
+          <option value="Agence Laayoune">{t('CheckOne')}</option>
+          <option value="Aéroport Laayoune">{t('CheckTwo')}</option>
         </select>
         <div className="mt-4 space-y-4">
           <Input
@@ -208,13 +209,13 @@ export default function SecondForm() {
             variant="h6"
             className="text-gray-900 dark:text-gray-50 text-sm"
           >
-            Paiment à La Livraison
+            {t('Livraison')}
           </Typography>
           <Typography
             variant="paragraph"
             className="text-gray-700 dark:text-gray-300 text-sm"
           >
-            Payer en argent comptant à la livraison.
+            {t('Livraison1')}
           </Typography>
         </div>
         <div className="modal-action">
@@ -223,7 +224,7 @@ export default function SecondForm() {
               onClick={() => handleConfirmation()}
               className="btn btn-primary text-white btn-block text-[12px]"
             >
-              Réserver
+              {t('ReserveBtn')}
             </button>
             <button
               onClick={() => {
@@ -231,7 +232,7 @@ export default function SecondForm() {
               }}
               className="btn btn-ghost btn-block text-[12px] dark:text-gray-500"
             >
-              Annuler
+              {t('CancelBtn')}
             </button>
           </div>
         </div>
