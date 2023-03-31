@@ -133,7 +133,7 @@ export default function FirstForm({ children, carName, carPrice, modalClose }) {
             htmlFor="time-start"
             className="block text-sm text-gray-700 font-semibold mb-2 dark:text-gray-50 text-start"
           >
-            heure depart
+            {t("startT")}
           </label>
           <input
             required
@@ -149,7 +149,7 @@ export default function FirstForm({ children, carName, carPrice, modalClose }) {
             htmlFor="time-end"
             className="block text-sm text-start text-gray-700 font-semibold mb-2"
           >
-            Heure End
+            {t("endT")}
           </label>
           <input
             required
