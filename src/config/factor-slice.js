@@ -20,6 +20,8 @@ const initialState = {
     email: "",
     carName: "",
     agence: "",
+    startTime: "",
+    endTime: "",
   },
   data: [],
 };
@@ -85,25 +87,31 @@ const factoreSlice = createSlice({
       state.factore.days = action.payload;
     },
     setDateEnd: (state, action) => {
-      state.factore.dateEnd = action.payload
+      state.factore.dateEnd = action.payload;
     },
     setDateStart: (state, action) => {
-      state.factore.dateStart = action.payload
+      state.factore.dateStart = action.payload;
     },
     setFullName: (state, action) => {
-      state.factore.fullName = action.payload
+      state.factore.fullName = action.payload;
     },
     setEmail: (state, action) => {
-      state.factore.email = action.payload
+      state.factore.email = action.payload;
     },
     setAdress: (state, action) => {
-      state.factore.address = action.payload
+      state.factore.address = action.payload;
     },
     setMobile: (state, action) => {
-      state.factore.mobile = action.payload
+      state.factore.mobile = action.payload;
     },
     setAgence: (state, action) => {
-      state.factore.agence = action.payload
+      state.factore.agence = action.payload;
+    },
+    setStartTime(state, action) {
+      state.factore.startTime = action.payload;
+    },
+    setEndTime(state, action) {
+      state.factore.endTime = action.payload;
     },
   },
 });
@@ -127,6 +135,8 @@ export const {
   setAdress,
   setEmail,
   setAgence,
+  setStartTime,
+  setEndTime,
 } = factoreSlice.actions;
 
 // Export the reducer for the navigation slice

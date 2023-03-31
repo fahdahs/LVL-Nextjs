@@ -11,6 +11,8 @@ import {
   setGps,
   setReset,
   setSeatBaby,
+  setStartTime,
+  setEndTime,
 } from "@/config/factor-slice";
 import { t } from "i18next";
 
@@ -24,6 +26,9 @@ export default function FirstForm({ children, carName, carPrice, modalClose }) {
   const [border, setBorder] = useState(
     "dark:border-primary-dark/60 border-gray-300"
   );
+
+  const timeEnd = useSelector(state => state.factore.endTime)
+  const timeStart = useSelector(state => state.factore.startTime)
 
   useEffect(() => {
     dispatch(setSeatBaby(isSeatBaby));
@@ -64,13 +69,21 @@ export default function FirstForm({ children, carName, carPrice, modalClose }) {
   const handleNext = () => {
     const startDateObj = new Date(startDate);
     const endDateObj = new Date(endDate);
-    if (startDate && endDate && endDateObj.getTime() > startDateObj.getTime()) {
+    if (startDate && endDate && endDateObj.getTime() > startDateObj.getTime() && timeEnd && timeStart ) {
       dispatch(setActiveForm(2));
       dispatch(calcPriceTotal());
     } else {
       setBorder("border-red-600");
     }
   };
+
+  function handleStartTimeChange(event) {
+    dispatch(setStartTime(event.target.value));
+  }
+
+  function handleEndTimeChange(event) {
+    dispatch(setEndTime(event.target.value));
+  }
 
   const dateStart = useSelector((state) => state.factore.dateStart);
   const dateEnd = useSelector((state) => state.factore.dateEnd);
@@ -85,7 +98,7 @@ export default function FirstForm({ children, carName, carPrice, modalClose }) {
             htmlFor="date-start"
             className="block text-sm text-gray-700 font-semibold mb-2 dark:text-gray-50 text-start"
           >
-            {t('start')}
+            {t("start")}
           </label>
           <input
             required
@@ -102,7 +115,7 @@ export default function FirstForm({ children, carName, carPrice, modalClose }) {
             htmlFor="date-end"
             className="block text-sm text-start text-gray-700 font-semibold mb-2"
           >
-            {t('end')}
+            {t("end")}
           </label>
           <input
             required
@@ -112,6 +125,39 @@ export default function FirstForm({ children, carName, carPrice, modalClose }) {
             className={`w-full border px-4 py-2 rounded-md focus:outline-none dark:bg-primary-dark-light dark:text-gray-50 ${border}`}
             onChange={handleEndDateChange}
             value={dateEnd}
+          />
+        </div>
+        {/* Input fields for start and end times */}
+        <div className="mb-5">
+          <label
+            htmlFor="time-start"
+            className="block text-sm text-gray-700 font-semibold mb-2 dark:text-gray-50 text-start"
+          >
+            heure depart
+          </label>
+          <input
+            required
+            type="time"
+            id="time-start"
+            name="time-start"
+            className={`w-full px-4 py-2 border rounded-md focus:outline-none dark:bg-primary-dark-light dark:text-gray-50 ${border}`}
+            onChange={handleStartTimeChange}
+          />
+        </div>
+        <div className="mb-5">
+          <label
+            htmlFor="time-end"
+            className="block text-sm text-start text-gray-700 font-semibold mb-2"
+          >
+            Heure End
+          </label>
+          <input
+            required
+            type="time"
+            id="time-end"
+            name="time-end"
+            className={`w-full border px-4 py-2 rounded-md focus:outline-none dark:bg-primary-dark-light dark:text-gray-50 ${border}`}
+            onChange={handleEndTimeChange}
           />
         </div>
         {/* Checkboxes for GPS and seat baby */}
@@ -128,10 +174,10 @@ export default function FirstForm({ children, carName, carPrice, modalClose }) {
             </div>
             <div className="ml-3 mb-3 -m-1.5">
               <label htmlFor="seat" className="text-start  dark:text-gray-50">
-                {t('add1')}
+                {t("add1")}
               </label>
               <span className="text-gray-500 text-start text-sm dark:text-gray-300 block">
-                {t('priceAdd1')}
+                {t("priceAdd1")}
               </span>
             </div>
           </div>
@@ -146,10 +192,10 @@ export default function FirstForm({ children, carName, carPrice, modalClose }) {
             </div>
             <div className="ml-3 -m-1.5">
               <label htmlFor="gps" className="label-text dark:text-gray-50">
-                {t('add2')}
+                {t("add2")}
               </label>
               <span className="text-gray-500 block text-start text-sm dark:text-gray-300">
-                {t('priceAdd2')}
+                {t("priceAdd2")}
               </span>
             </div>
           </div>
@@ -164,7 +210,7 @@ export default function FirstForm({ children, carName, carPrice, modalClose }) {
             onClick={handleNext}
             className="btn btn-primary btn-block text-[12px] text-white"
           >
-           {t('ReserveBtn')}
+            {t("ReserveBtn")}
           </button>
           <div className="modal-action w-full">
             <label
@@ -172,7 +218,7 @@ export default function FirstForm({ children, carName, carPrice, modalClose }) {
               htmlFor={modalClose}
               className="btn btn-ghost btn-block text-[12px] dark:text-gray-500"
             >
-              {t('CancelBtn')}
+              {t("CancelBtn")}
             </label>
           </div>
         </div>

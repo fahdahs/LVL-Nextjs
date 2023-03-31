@@ -37,6 +37,8 @@ export default function SecondForm() {
     carName,
     gps: hasGps,
     seatBaby: hasSeatBaby,
+    startTime,
+    endTime
   } = factore;
 
 
@@ -59,6 +61,8 @@ export default function SecondForm() {
             agence,
             gps: hasGps ? "avec GPS Choisi" : "sans GPS",
             seatBaby: hasSeatBaby ? "avec Siége bébé" : "sans Siége bébé",
+            startTime,
+            endTime
           },
           "AYrkx1jjG82zspr1b"
         )
