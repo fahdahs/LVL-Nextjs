@@ -107,7 +107,7 @@ export default function Contact() {
             </div>
             <div className="w-full px-4 lg:w-1/2 xl:w-5/12">
               <div className="relative rounded-lg bg-white dark:bg-[#0e141b] p-8 shadow-lg sm:p-12">
-                <form ref={form} form onSubmit={handleSubmit}>
+                <form ref={form} onSubmit={handleSubmit}>
                   <div className="mb-6">
                     <input
                     name="nom"
