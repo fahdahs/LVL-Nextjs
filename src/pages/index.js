@@ -91,9 +91,7 @@ export default function Home({ cars_data }) {
   return (
     <>
       <Head>
-        <title>
-          Location de voiture à Laayoune | LOCATION DE VOITURE A LAAYOUNE
-        </title>
+        <title>LVL | LOCATION DE VOITURES A LAAYOUNE</title>
         <meta
           name="description"
           content="Quelque soit la voiture souhaité, Location de voiture laayoune,Location Voiture a Laayoune, locationdevoiturealaayoune, Location Voiture Aeroport Laayoune, vous garantit les meilleurs tarifs en ligne pour votre voiture louée à Laayoune avec un prix raisonnable à partir de 195.00 MAD, et vous disposez d'un large choix de véhicule avec un GPS gratuit et un siège bébé à 40.00 MAD par jour pour la période de votre choix quelque soit longue ou courte."
@@ -151,6 +149,35 @@ export default function Home({ cars_data }) {
         <meta name="author" content="FAHD AHSYNI - SH WEB SERVICES" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <div className="sr-only">
+        <h1>
+          Location de voiture laayoune le service numéro 1 au sud de location de
+          voiture.
+        </h1>
+        <p className="language-french">
+          Quelque soit la voiture souhaité, <b>Location de voiture laayoune</b>{" "}
+          vous garantit les meilleurs tarifs en ligne pour votre voiture louée à
+          Laayoune avec <p>un prix raisonnable à partir de 195.00 MAD</p>, et
+          vous disposez d{"'"}un large choix de véhicule avec{" "}
+          <a href="https://locationdevoiturealaayoune.com">
+            un GPS gratuit et un siège bébé à 40.00 MAD
+          </a>{" "}
+          par jour pour la période de votre choix quelque soit longue ou courte.
+        </p>
+        <p>
+          Whatever car you want, <strong>Laayoune car rental</strong> guarantees
+          you the best online rates for your car rented in Laayoune with a
+          reasonable price from 195.00 MAD, and you have a wide choice of
+          vehicle with a <mark>free GPS and a seat. baby at 40.00 MAD</mark> per
+          day for the period of your choice, long or short.
+        </p>
+        <p>
+          مهما كانت السيارة التي تريدها ، يضمن لك تأجير السيارات بالعيون أفضل
+          الأسعار عبر الإنترنت لسيارتك المستأجرة في العيون بسعر معقول يبدأ من
+          195.00 درهم إماراتي ، ولديك خيار واسع من السيارات مع GPS مجاني ومقعد
+          للأطفال بسعر 40.00 درهم في اليوم للمدة التي تختارها ، طويلة أو قصيرة.
+        </p>
+      </div>
       <main className="dark:bg-[#0a0c0f] relative overflow-x-hidden">
         <motion.a
           whileHover={{ scale: 1.1 }}

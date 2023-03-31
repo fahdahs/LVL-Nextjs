@@ -38,7 +38,7 @@ function Header({ t }) {
                       className="h-full w-full object-cover"
                       placeholder="blur"
                       src={heroImage}
-                      alt="People working on laptops"
+                      alt="Location de voiture laayoune wallpaper"
                     />
                     <div className="absolute inset-0 bg-black/50 mix-blend-multiply" />
                     <div className="absolute top-0 left-0 w-full h-36 bg-gradient-to-b from-black/80 to-transparent mix-blend-multiply" />
