@@ -46,8 +46,8 @@ export default function SecondForm() {
     if (confirmation === CONFIRMATION_STATES.PENDING) {
       emailjs
         .send(
-          "service_efarc4k",
-          "template_e1dzfvd",
+          "",
+          "",
           {
             fullName,
             email,
@@ -64,7 +64,7 @@ export default function SecondForm() {
             startTime,
             endTime
           },
-          "AYrkx1jjG82zspr1b"
+          ""
         )
         .then(
           (response) => {
