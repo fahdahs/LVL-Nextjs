@@ -12,10 +12,10 @@ export default function Contact() {
   const handleSubmit = (event) => {
     event.preventDefault();
     emailjs.sendForm(
-      "service_2i1e0qs",
-      "template_65fxf7w",
+      "",
+      "",
       form.current,
-      "AYrkx1jjG82zspr1b"
+      ""
     );
     alert("done")
   };
